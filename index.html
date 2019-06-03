@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css" integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA" crossorigin="anonymous">
+</head>
+<body class="all">
+<div class="container"> <!--doors-->
+	<div class="quest1">
+		<div class="d-flex">
+			<div class="py-3 px-3">
+				<img src="door.png" class="w-50 dver-1">
+			</div>
+			<div class="py-3 px-3">
+				<img src="door2.png" class="w-50 dver-2">
+			</div>
+			<div class="py-3 px-3">
+				<img src="door3.png" class="w-50 dver-3">
+			</div>
+		</div>
+	</div>
+</div>
+<div class="quest2" style="display: none;"> <!--1 door-->
+	<div style="background-image: url(bg.jpg);background-size: 100% 100%;height: 700px">
+		<div class="text-white">
+			<h3>Надо найти 3 предмета</h3>
+			<div id="point"></div>
+			<button class="btn btn-success exit-btn">
+				Выйти из игры
+			</button>
+		</div>
+		<div style="position: absolute;margin-top: 450px;" class="otvet-nepr1">
+			<img src="gun.png" width="100" height="60">
+		</div>
+		<div style="position: absolute;margin-left: 850px;margin-top: 350px" class="otvet-pr1">
+			<img src="mantiya.png" width="80" height="80">
+		</div>
+		<div style="position: absolute;margin-left: 450px;margin-top: 380px;" class="otvet-pr2">
+			<img src="metla.png" width="80" height="80">
+		</div>
+		<div style="margin-left: 600px;margin-top: 300px;position: absolute;" class="otvet-pr3">
+			<img src="palochka.png" width="60" height="60">
+		</div>
+		<div style="margin-left: 800px;margin-top: 500px;position: absolute;" class="otvet-nepr2">
+			<img src="ring.png" width="50" height="50">
+		</div>
+	</div>	
+</div>
+<!--
+<div style="position: absolute;margin-top: 450px;" class="Shoot">
+	<img src="gun.png" width="100" height="60">
+</div>
+<div style="position: absolute;margin-left: 850px;margin-top: 350px" class="otvet-pr1">
+	<img src="mantiya.png" width="80" height="80">
+</div>
+<div style="position: absolute;margin-left: 450px;margin-top: 380px;" class="otvet-pr2">
+	<img src="metla.png" width="80" height="80">
+</div>
+<div style="margin-left: 600px;margin-top: 300px;position: absolute;" class="otvet-pr3">
+	<img src="palochka.png" width="60" height="60">
+</div>
+-->
+<div class="quest3" style="display: none;"> <!--2 door-->
+	<div style="background-image: url(bg2.jpg);background-size: 100% 100%;height: 700px">
+		<div class="text-white">
+			<h3>Уничтожьте кольцо</h3>
+			<div id="HP"></div>
+			<button class="btn btn-success exit-btn">
+				Выйти из игры
+			</button>
+		</div>
+		<div style="margin-left: 980px;margin-top: 570px;position: absolute;" class="MoveRing">
+			<img src="ring.png" width="50" height="50">
+		</div>
+	</div>	
+</div>		
+<script type="text/javascript">
+		let point = 0;
+		document.getElementById("point").innerHTML = point;
+		//let HP = 0;
+		//document.getElementById("HP").innerHTML = HP;
+//Doors
+		document.querySelector(".dver-2").onclick = function(){
+			alert("2")
+			document.querySelector(".quest1").style.display = "none"
+			document.querySelector(".quest3").style.display = "inline"
+		}
+		document.querySelector(".dver-3").onclick = function(){
+			alert("дверь закрыта")
+
+		}
+		document.querySelector(".dver-1").onclick = function(){
+			alert("1")
+			document.querySelector(".quest1").style.display = "none"
+			document.querySelector(".quest2").style.display = "inline"
+		}
+//1
+		document.querySelector(".otvet-pr1").onclick = function(){
+			alert("правильно-")
+			document.querySelector(".otvet-pr1").style.display = "none"
+			point = point + 1
+			document.getElementById("point").innerHTML = point;		
+		}
+		document.querySelector(".otvet-pr2").onclick = function(){
+			alert("правильно_")
+			document.querySelector(".otvet-pr2").style.display = "none"
+			point = point + 1
+			document.getElementById("point").innerHTML = point;
+		}
+		document.querySelector(".otvet-pr3").onclick = function(){
+			alert("правильно")
+			document.querySelector(".otvet-pr3").style.display = "none"
+			point = point + 1
+			document.getElementById("point").innerHTML = point;
+		}
+		document.querySelector(".otvet-nepr1").onclick = function(){
+			alert("неправильно-")
+		}
+		document.querySelector(".otvet-nepr2").onclick = function(){
+			alert("неправильно")
+		}
+		document.querySelector(".exit-btn").onclick = function(){
+			document.querySelector(".all").style.display= "none"
+		}
+//2
+		document.querySelector(".MoveRing").onclick = function(){
+			document.querySelector(".MoveRing").style.marginTop = "190px"
+			document.querySelector(".MoveRing").style.marginRight = "100px"
+			//HP = HP + 1
+			//document.getElementById("HP").innerHTML = HP;		
+		}
+</script>
+</body>
+</html>
